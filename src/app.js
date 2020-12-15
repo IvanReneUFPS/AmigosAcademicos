@@ -1,3 +1,4 @@
+require("../config");
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
@@ -6,6 +7,7 @@ const path = require("path");
 const passport = require("passport");
 const session = require("express-session");
 const router = require("./routes");
+const mongoose = require("mongoose");
 
 app.engine(
     "hbs",
@@ -15,6 +17,18 @@ app.engine(
         layoutsDir: path.join(__dirname, "/views", "/layouts"),
     })
 );
+
+mongoose
+    .connect("mongodb://localhost/academicosdb", {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+    })
+    .then((db) => {
+        console.log("db is connected");
+    })
+    .catch((err) => {
+        console.log(err);
+    });
 
 app.set("port", process.env.PORT);
 app.set("views", path.join(__dirname, "views"));
