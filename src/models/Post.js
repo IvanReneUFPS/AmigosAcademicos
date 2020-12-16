@@ -1,8 +1,5 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
-const Materia = mongoose.model("Materia");
-const Respuesta = mongoose.model("Respuesta");
-const Usuario = mongoose.model("Usuario");
 
 const PostSchema = new Schema({
     contenido: { type: String, required: true },

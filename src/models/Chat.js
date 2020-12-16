@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
-const Usuario = mongoose.model("Usuario");
 
 const ChatSchema = new Schema({
     emisor: { type: Schema.Types.ObjectId, ref: "Usuario", required: true },

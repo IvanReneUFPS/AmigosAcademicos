@@ -1,13 +1,15 @@
+require("dotenv").config();
 require("../config");
+require("./database");
 const express = require("express");
 const app = express();
-const morgan = require("morgan");
 const hbs = require("express-handlebars");
+const morgan = require("morgan");
 const path = require("path");
 const passport = require("passport");
-const session = require("express-session");
+require("./passport");
 const router = require("./routes");
-const mongoose = require("mongoose");
+const session = require("express-session");
 
 app.engine(
     "hbs",
@@ -17,18 +19,6 @@ app.engine(
         layoutsDir: path.join(__dirname, "/views", "/layouts"),
     })
 );
-
-mongoose
-    .connect("mongodb://localhost/academicosdb", {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-    })
-    .then((db) => {
-        console.log("db is connected");
-    })
-    .catch((err) => {
-        console.log(err);
-    });
 
 app.set("port", process.env.PORT);
 app.set("views", path.join(__dirname, "views"));
