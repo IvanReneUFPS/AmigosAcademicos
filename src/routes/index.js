@@ -3,8 +3,14 @@ const router = Router();
 const loginRouter = require("./login");
 
 router.get("/", (req, res) => {
-    return res.render("index", {
-        title: "Inicio",
+    if (req.user) {
+        return res.render("index", {
+            title: "Inicio",
+            user: req.user,
+        });
+    }
+    return res.render("login", {
+        title: "Iniciar sesión",
     });
 });
 

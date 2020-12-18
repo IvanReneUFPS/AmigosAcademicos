@@ -1,0 +1,30 @@
+body {
+    overflow-y: hidden;
+}
+
+.container-img__login {
+    background: url("/images/background.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width: 100%;
+    min-height: 100vh;
+    max-height: 100vh;
+    position: fixed;
+}
+
+.container-login {
+    background: #fff;
+    border: 1px solid #e2e2e2;
+    box-shadow: 0 0 5px #888;
+    border-radius: 4px;
+    padding-top: 25px;
+    width: 650px;
+    bottom: initial;
+    left: 0;
+    right: 0;
+    margin: auto;
+    overflow-y: hidden;
+    top: 10%;
+}

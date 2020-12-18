@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://kit.fontawesome.com/0dc3b1d201.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <title>Nube</title>
+</head>
+
+<body class="bg-gray-200">
+    <header class="w-full bg-white shadow-lg">
+        <nav class="w-9/12 mx-auto flex flex-wrap items-center justify-between">
+            <img class="w-20" src="images/logo.png">
+            <ul class="flex">
+                <li class="p-4 border-b-2 border-red-800">
+                    <a href="#"><i class="text-2xl fas fa-home text-red-800"></i></a>
+                </li>
+                <li class="p-4 ">
+                    <a href="#"><i class="text-2xl far fa-newspaper"></i></a>
+                </li>
+                <li class="p-4 ">
+                    <a href="#"><i class="text-2xl far fa-edit"></i></a>
+                </li>
+                <li class="p-4 ">
+                    <a href="#"><i class="text-2xl fas fa-users"></i></a>
+                </li>
+                <li class="p-4 ">
+                    <a href="#"><i class="text-2xl fas fa-bell"></i></a>
+                </li>
+            </ul>
+            <div class="flex items-center">
+                <label for="search" class="py-1 px-2 flex mr-2 items-center rounded-full border-2 border-black">
+                    <i class="fas fa-search pr-4"></i>
+                    <input class="outline-none" type="text" id="search" placeholder="Buscar en Nube" requerid>
+                </label>
+                <span class="bg-green-800 py-1 px-3 rounded-full mr-2 text-white">
+                    <img src="{{user.foto}}" alt="">
+                </span>
+                <i class="fas fa-globe mr-4 text-3xl"></i>
+                <a class="flex items-center justify-center bg-red-600 hover:bg-red-800 duration-300 w-40 h-10 rounded-full text-white"
+                    href="">Añadir pregunta</a>
+            </div>
+        </nav>
+    </header>
