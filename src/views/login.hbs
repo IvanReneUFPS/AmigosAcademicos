@@ -1,21 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/0dc3b1d201.js" crossorigin="anonymous"></script>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </style>
 </head>
 
 <body>
-    <div class="absolute">
-        <div class="container-img__login"></div>
-    </div>
-    <div class="absolute b-0 container-login">
-
-    </div>
+    <main class="main_login">
+        <form class="shadow-2xl bg-white rounded-md p-8 text-center" action="" method="">
+            {{!-- <img class="w-40 mx-auto" src="/images/background.png"> --}}
+            <p class="p-4">Un lugar para compartir conocimientos y entender mejor el mundo</p>
+            <a class="mx-auto border-2 duration-300 hover:bg-gray-300 border-black rounded-md w-60 h-10 flex items-center justify-center"
+                href="/auth/github">
+                <i class="fab fa-github text-2xl"></i>
+                <p class="pl-2">Iniciar sesión con github</p>
+            </a>
+        </form>
+    </main>
 </body>
-
-<a href='https://www.freepik.es/vectores/fondo'>Vector de Fondo creado por vectorpocket - www.freepik.es</a>
 
 </html>
