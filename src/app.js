@@ -1,8 +1,13 @@
 require("dotenv").config();
 require("../config");
 require("./database");
+const http = require("http");
+const socketio = require("socket.io");
 const express = require("express");
 const app = express();
+const server = http.createServer(app);
+const io = socketio.listen(server);
+require("./sockets")(io);
 const flash = require("connect-flash");
 const hbs = require("express-handlebars");
 const morgan = require("morgan");
