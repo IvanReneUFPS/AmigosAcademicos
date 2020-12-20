@@ -1,48 +1,10 @@
 <article class="w-1/5 pr-4">
-    <a href="#">
+    {{#each materias}}
+    <a href="">
         <li class="flex items-center">
-            <img class="w-5 h-10" src="images/ico.svg">
-            <p class="pl-2">Lorem ipsum</p>
-        </li>
-        <li class="flex items-center">
-            <img class="w-5 h-10" src="images/ico.svg">
-            <p class="pl-2">Lorem ipsum</p>
-        </li>
-        <li class="flex items-center">
-            <img class="w-5 h-10" src="images/ico.svg">
-            <p class="pl-2">Lorem ipsum</p>
-        </li>
-        <li class="flex items-center">
-            <img class="w-5 h-10" src="images/ico.svg">
-            <p class="pl-2">Lorem ipsum</p>
-        </li>
-        <li class="flex items-center">
-            <img class="w-5 h-10" src="images/ico.svg">
-            <p class="pl-2">Lorem ipsum</p>
-        </li>
-        <li class="flex items-center">
-            <img class="w-5 h-10" src="images/ico.svg">
-            <p class="pl-2">Lorem ipsum</p>
-        </li>
-        <li class="flex items-center">
-            <img class="w-5 h-10" src="images/ico.svg">
-            <p class="pl-2">Lorem ipsum</p>
-        </li>
-        <li class="flex items-center">
-            <img class="w-5 h-10" src="images/ico.svg">
-            <p class="pl-2">Lorem ipsum</p>
-        </li>
-        <li class="flex items-center">
-            <img class="w-5 h-10" src="images/ico.svg">
-            <p class="pl-2">Lorem ipsum</p>
-        </li>
-        <li class="flex items-center">
-            <img class="w-5 h-10" src="images/ico.svg">
-            <p class="pl-2">Lorem ipsum</p>
-        </li>
-        <li class="flex items-center">
-            <img class="w-5 h-10" src="images/ico.svg">
-            <p class="pl-2">Lorem ipsum</p>
+            <img width="60px" height="80px" class="rounded-full mr-2 text-white dropdown-toggle cursor-pointer" src="{{this.fotografia}}">
+            <p class="pl-2">{{this.nombre}}</p>
         </li>
     </a>
+    {{/each}}
 </article>
