@@ -5,13 +5,11 @@ const PostSchema = new Schema({
     contenido: { type: String, required: true },
     fecha: {
         type: Date,
-        dafault: Date.now,
+        dafault: Date.now(),
     },
-    fotos: [
-        {
-            url: String,
-        },
-    ],
+    fotografia: {
+        url: String,
+    },
     materia: { type: Schema.ObjectId, ref: "Materia" },
     respuestas: [{ type: Schema.ObjectId, ref: "Respuesta" }],
     titulo: { type: String, required: true },
