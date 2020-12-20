@@ -11,6 +11,13 @@ const passport = require("passport");
 require("./passport");
 const router = require("./routes");
 const session = require("express-session");
+const multer = require('multer');
+const storage = multer.diskStorage({
+    destination: path.join(__dirname,'public/images/materias'),
+    filename: (req, file, cb) =>{
+        cb(null, file.originalname)
+    }
+});
 
 app.engine(
     "hbs",
@@ -33,6 +40,13 @@ app.use(
     })
 );
 app.use(express.static(path.join(__dirname, "public")));
+
+app.use(multer({
+    storage,
+    dest: path.join(__dirname,'public/images/materias'),
+    limits:{fieldSize: 2000000}
+}).single('fotografia'));
+
 app.use(
     session({
         secret: process.env.SECRET_SESSION,
