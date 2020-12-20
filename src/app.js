@@ -3,6 +3,7 @@ require("../config");
 require("./database");
 const express = require("express");
 const app = express();
+const flash = require("connect-flash");
 const hbs = require("express-handlebars");
 const morgan = require("morgan");
 const path = require("path");
@@ -41,7 +42,12 @@ app.use(
 );
 app.use(passport.initialize());
 app.use(passport.session());
-
+app.use(flash());
+app.use((req, res, next) => {
+    res.locals.success = req.flash("success");
+    res.locals.error = req.flash("error");
+    next();
+});
 app.use(router);
 
 app.listen(app.get("port"), () => {
