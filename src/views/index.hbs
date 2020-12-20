@@ -1,141 +1,53 @@
 {{> header}}
-    <main class="w-9/12 mx-auto flex py-8">
-        <section class="flex w-4/5">
-            {{> sidebar-left}}
-            <article class="w-4/5 pr-4">
-                <div class="bg-white rounded-md border-1 border-black p-2 shadow-xl">
-                    <label for="" class="flex items-center">
-                        <p class="bg-green-800 py-1 px-3 rounded-full mr-2 text-white">F</p>
-                        <p>Frank Jean Pierre Gómez Salazar</p>
-                    </label>
-                    <input class="mt-2 w-full py-1 px-2" placeholder="¿Cuál es tu pregunta o enlace?" type="text">
+<main class="w-9/12 mx-auto flex py-8">
+    <section class="flex w-4/5">
+        {{> sidebar-left}}
+        <article class="w-4/5 pr-4">
+            <div class="bg-white rounded-md border-1 border-black p-3 shadow-xl cursor-pointer" data-toggle="modal"
+                data-target="#exampleModal">
+                <label for="" class="flex items-center  cursor-pointer">
+                    <img class="rounded-full mr-2 text-white" src="{{user.foto}}" alt="" width="19px" height="19px">
+                    <p class="cursor-pointer">{{user.nombres}}</p>
+                </label>
+                <input class="mt-2 w-full py-1 px-2 focus:outline-none  cursor-pointer"
+                    placeholder="¿Cuál es tu pregunta o enlace?" type="text">
+            </div>
+            <div class="bg-white rounded-md border-1 border-black p-2 shadow-xl mt-4">
+                <label for="" class="flex items-center mb-4">
+                    <p class="bg-green-800 py-1 px-3 rounded-full mr-2 text-white">F</p>
+                    <p>Frank Jean Pierre Gómez Salazar</p>
+                    <p class="text-gray-400">- lunes</p>
+                </label>
+                <div class="w-full">
+                    <p class="font-bold pb-0.5">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum placeat ad, maxime voluptates
+                        obcaecati perferendis eos doloremque culpa ipsa dolorem dolor eum accusamus perspiciatis iure
+                        repellat repellendus voluptatum eligendi aperiam!</p>
                 </div>
-                <div class="bg-white rounded-md border-1 border-black p-2 shadow-xl mt-4">
-                    <label for="" class="flex items-center mb-4">
-                        <p class="bg-green-800 py-1 px-3 rounded-full mr-2 text-white">F</p>
-                        <p>Frank Jean Pierre Gómez Salazar</p>
-                        <p class="text-gray-400">- lunes</p>
-                    </label>
-                    <div class="w-full">
-                        <p class="font-bold pb-0.5">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum placeat ad, maxime voluptates obcaecati perferendis eos doloremque culpa ipsa dolorem dolor eum accusamus perspiciatis iure repellat repellendus voluptatum eligendi aperiam!</p>
+                <div class="flex justify-between pt-2">
+                    <div class="flex">
+                        <span class="flex items-center pr-2">
+                            <i class="fas fa-arrow-circle-up"></i>
+                            <p class="pl-2">232</p>
+                        </span>
+                        <span class="flex items-center pr-2">
+                            <i class="fas fa-redo"></i>
+                            <p class="pl-2">232</p>
+                        </span>
+                        <span class="flex items-center">
+                            <i class="far fa-comment-dots"></i>
+                            <p class="pl-2">232</p>
+                        </span>
                     </div>
-                    <div class="flex justify-between pt-2">
-                        <div class="flex">
-                            <span class="flex items-center pr-2">
-                                <i class="fas fa-arrow-circle-up"></i>
-                                <p class="pl-2">232</p>
-                            </span>
-                            <span class="flex items-center pr-2">
-                                <i class="fas fa-redo"></i>
-                                <p class="pl-2">232</p>
-                            </span>
-                            <span class="flex items-center">
-                                <i class="far fa-comment-dots"></i>
-                                <p class="pl-2">232</p>
-                            </span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-share pr-4"></i>
-                            <i class="fas fa-ellipsis-h"></i>
-                        </div>
-                    </div> 
-                </div>
-                <div class="bg-white rounded-md border-1 border-black p-2 shadow-xl mt-4">
-                    <label for="" class="flex items-center mb-4">
-                        <p class="bg-green-800 py-1 px-3 rounded-full mr-2 text-white">F</p>
-                        <p>Frank Jean Pierre Gómez Salazar</p>
-                        <p class="text-gray-400">- lunes</p>
-                    </label>
-                    <div class="w-full">
-                        <p class="font-bold pb-0.5">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum placeat ad, maxime voluptates obcaecati perferendis eos doloremque culpa ipsa dolorem dolor eum accusamus perspiciatis iure repellat repellendus voluptatum eligendi aperiam!</p>
+                    <div class="flex items-center">
+                        <i class="fas fa-share pr-4"></i>
+                        <i class="fas fa-ellipsis-h"></i>
                     </div>
-                    <div class="flex justify-between pt-2">
-                        <div class="flex">
-                            <span class="flex items-center pr-2">
-                                <i class="fas fa-arrow-circle-up"></i>
-                                <p class="pl-2">232</p>
-                            </span>
-                            <span class="flex items-center pr-2">
-                                <i class="fas fa-redo"></i>
-                                <p class="pl-2">232</p>
-                            </span>
-                            <span class="flex items-center">
-                                <i class="far fa-comment-dots"></i>
-                                <p class="pl-2">232</p>
-                            </span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-share pr-4"></i>
-                            <i class="fas fa-ellipsis-h"></i>
-                        </div>
-                    </div> 
                 </div>
-                <div class="bg-white rounded-md border-1 border-black p-2 shadow-xl mt-4">
-                    <label for="" class="flex items-center mb-4">
-                        <p class="bg-green-800 py-1 px-3 rounded-full mr-2 text-white">F</p>
-                        <p>Frank Jean Pierre Gómez Salazar</p>
-                        <p class="text-gray-400">- lunes</p>
-                    </label>
-                    <div class="w-full">
-                        <p class="font-bold pb-0.5">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum placeat ad, maxime voluptates obcaecati perferendis eos doloremque culpa ipsa dolorem dolor eum accusamus perspiciatis iure repellat repellendus voluptatum eligendi aperiam!</p>
-                    </div>
-                    <div class="flex justify-between pt-2">
-                        <div class="flex">
-                            <span class="flex items-center pr-2">
-                                <i class="fas fa-arrow-circle-up"></i>
-                                <p class="pl-2">232</p>
-                            </span>
-                            <span class="flex items-center pr-2">
-                                <i class="fas fa-redo"></i>
-                                <p class="pl-2">232</p>
-                            </span>
-                            <span class="flex items-center">
-                                <i class="far fa-comment-dots"></i>
-                                <p class="pl-2">232</p>
-                            </span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-share pr-4"></i>
-                            <i class="fas fa-ellipsis-h"></i>
-                        </div>
-                    </div> 
-                </div>
-                <div class="bg-white rounded-md border-1 border-black p-2 shadow-xl mt-4">
-                    <label for="" class="flex items-center mb-4">
-                        <p class="bg-green-800 py-1 px-3 rounded-full mr-2 text-white">F</p>
-                        <p>Frank Jean Pierre Gómez Salazar</p>
-                        <p class="text-gray-400">- lunes</p>
-                    </label>
-                    <div class="w-full">
-                        <p class="font-bold pb-0.5">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum placeat ad, maxime voluptates obcaecati perferendis eos doloremque culpa ipsa dolorem dolor eum accusamus perspiciatis iure repellat repellendus voluptatum eligendi aperiam!</p>
-                    </div>
-                    <div class="flex justify-between pt-2">
-                        <div class="flex">
-                            <span class="flex items-center pr-2">
-                                <i class="fas fa-arrow-circle-up"></i>
-                                <p class="pl-2">232</p>
-                            </span>
-                            <span class="flex items-center pr-2">
-                                <i class="fas fa-redo"></i>
-                                <p class="pl-2">232</p>
-                            </span>
-                            <span class="flex items-center">
-                                <i class="far fa-comment-dots"></i>
-                                <p class="pl-2">232</p>
-                            </span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-share pr-4"></i>
-                            <i class="fas fa-ellipsis-h"></i>
-                        </div>
-                    </div> 
-                </div>
-            </article>
-        </section>
-        {{> sidebar-right}}
-    </main>
-    
+            </div>
+        </article>
+    </section>
+    {{> sidebar-right}}
+    {{> footer}}
+    <script src="/js/hacerPregunta.js"></script>
+</main>

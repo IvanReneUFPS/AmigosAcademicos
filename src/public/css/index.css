@@ -9,3 +9,19 @@
     justify-content: center;
     align-items: center;
 }
+
+.text-area__pregunta {
+    box-sizing: border-box;
+    resize: none;
+    width: 100%;
+    box-shadow: none;
+    background-color: transparent;
+    padding: 0px;
+    outline: none;
+    border: none;
+    flex: 1 1 0%;
+    min-height: 26px;
+    overflow: hidden;
+    overflow-wrap: break-word;
+    height: 26px;
+}
