@@ -94,3 +94,25 @@ passport.use(
         }
     )
 );
+
+passport.use(
+    "local-signin",
+    new LocalStrategy(
+        {
+            usernameField: "email",
+            passwordField: "password",
+            passReqToCallback: true,
+        },
+        async (req, email, password, done) => {
+            let usuario = await Usuario.findOne({ email });
+            if (usuario.password == password) {
+                return done(null, usuario);
+            }
+            return done(
+                null,
+                false,
+                req.flash("error", "Correo o contraseña incorrectos")
+            );
+        }
+    )
+);

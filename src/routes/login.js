@@ -15,6 +15,15 @@ router.post(
     })
 );
 
+router.post(
+    "/signin",
+    passport.authenticate("local-signin", {
+        successRedirect: "/",
+        failureRedirect: "/auth",
+        passReqToCallback: true,
+    })
+);
+
 router.get(
     "/github",
     passport.authenticate("github", { scope: ["user:email"] })
