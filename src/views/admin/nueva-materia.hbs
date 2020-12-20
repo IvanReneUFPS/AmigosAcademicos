@@ -1,0 +1,23 @@
+{{> header}}
+<main class="w-9/12 mx-auto flex py-8">
+    <form action="/admin/materia" method="POST">
+        <div class="form-group">
+            <h1>Registrar Materia</h1>
+        </div>
+        <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="nombre de la materia"
+                required>
+        </div>
+        <div class="form-group">
+            <label for="descripcion">Descripción</label>
+            <textarea class="form-control" id="descripcion" name="descripcion" placeholder="Una breve descripcíon de la materia"
+                cols="30" rows="10" required  ></textarea>
+        </div>
+        <div class="form-group">
+            <label for="descripcion">Fotografia</label>
+            <input type="file" name="fotografia" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+</main>
