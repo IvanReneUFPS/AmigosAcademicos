@@ -1,5 +1,6 @@
-const passport = require("passport");
 const GitHubStrategy = require("passport-github2").Strategy;
+const LocalStrategy = require("passport-local").Strategy;
+const passport = require("passport");
 const Usuario = require("../models/Usuario");
 
 passport.serializeUser(function (user, done) {
@@ -41,7 +42,55 @@ passport.use(
                     return done(null, user);
                 }
             }
-            return done(null, false);
+            return done(
+                null,
+                false,
+                req.flash(
+                    "error",
+                    "No se ha tenido acceso a tu cuenta de github, inténtalo más tarde"
+                )
+            );
+        }
+    )
+);
+
+passport.use(
+    "local-signup",
+    new LocalStrategy(
+        {
+            usernameField: "email",
+            passwordField: "password",
+            passReqToCallback: true,
+        },
+        async (req, email, password, done) => {
+            let usuario = await Usuario.findOne({ email });
+            if (usuario) {
+                return done(
+                    null,
+                    false,
+                    req.flash(
+                        "error",
+                        "El email que ha ingresado ya está asociado a una cuenta"
+                    )
+                );
+            } else {
+                usuario = await Usuario.create({
+                    email,
+                    password,
+                    nombres: req.body.nombres,
+                });
+                if (usuario) {
+                    return done(null, usuario);
+                }
+                return done(
+                    null,
+                    false,
+                    req.flash(
+                        "error",
+                        "Ha ocurrido un error inesperado, inténtalo nuevamente"
+                    )
+                );
+            }
         }
     )
 );

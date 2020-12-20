@@ -6,6 +6,15 @@ router.get("/", (req, res) => {
     return res.redirect("/");
 });
 
+router.post(
+    "/signup",
+    passport.authenticate("local-signup", {
+        successRedirect: "/",
+        failureRedirect: "/auth",
+        passReqToCallback: true,
+    })
+);
+
 router.get(
     "/github",
     passport.authenticate("github", { scope: ["user:email"] })
