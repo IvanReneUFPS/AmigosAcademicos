@@ -1,27 +1,28 @@
 require("dotenv").config();
 require("../config");
 require("./database");
+const path = require("path");
 const http = require("http");
-// const socketio = require("socket.io");
 const express = require("express");
 const app = express();
 const server = http.createServer(app);
-// const io = socketio.listen(server);
-// require("./sockets")(io);
+const socketio = require("socket.io");
+const io = socketio.listen(server);
+require("./sockets")(io);
 const flash = require("connect-flash");
 const hbs = require("express-handlebars");
-const morgan = require("morgan");
-const path = require("path");
 const passport = require("passport");
 require("./passport");
 const router = require("./routes");
 const session = require("express-session");
-const multer = require('multer');
+const morgan = require("morgan");
+const multer = require("multer");
+
 const storage = multer.diskStorage({
-    destination: path.join(__dirname,'public/images/server'),
-    filename: (req, file, cb) =>{
-        cb(null, file.originalname)
-    }
+    destination: path.join(__dirname, "public/images/server"),
+    filename: (req, file, cb) => {
+        cb(null, file.originalname);
+    },
 });
 
 app.engine(
@@ -46,11 +47,13 @@ app.use(
 );
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use(multer({
-    storage,
-    dest: path.join(__dirname,'public/images/server'),
-    limits:{fieldSize: 2000000}
-}).single('fotografia'));
+app.use(
+    multer({
+        storage,
+        dest: path.join(__dirname, "public/images/server"),
+        limits: { fieldSize: 2000000 },
+    }).single("fotografia")
+);
 
 app.use(
     session({
