@@ -1,8 +1,8 @@
 <article class="w-1/5 pr-4">
     {{#each materias}}
-    <a href="">
+    <a href="/post/materia/{{this._id}}">
         <li class="flex items-center">
-            <img width="60px" height="80px" class="rounded-full mr-2 text-white dropdown-toggle cursor-pointer" src="{{this.fotografia}}">
+            <img width="60px" height="80px" class="rounded-full mr-2 text-white dropdown-toggle cursor-pointer" src="/{{this.fotografia}}">
             <p class="pl-2">{{this.nombre}}</p>
         </li>
     </a>
