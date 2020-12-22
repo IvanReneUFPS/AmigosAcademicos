@@ -1,6 +1,8 @@
 const Materia = require("../models/Materia");
 const Post = require("../models/Post");
+const Respuesta = require("../models/Respuesta");
 const path = require("path");
+const { findById } = require("../models/Materia");
 
 module.exports = {
     crear: async (req, res) => {
@@ -12,7 +14,6 @@ module.exports = {
         }
         const materiaDb = await Materia.findById(materia);
         if (materiaDb) {
-            console.log(fotografia);
             const post = await Post.create({
                 contenido,
                 fotografia,
@@ -31,6 +32,27 @@ module.exports = {
                 return res.redirect("/");
             }
         }
+        return res.redirect("/");
+    },
+    responder: async (req, res) => {
+        const { contenido, _idPregunta } = req.body;
+        const { nombres, _id, foto } = req.user;
+        let fotografia = undefined;
+        if (req.file) {
+            fotografia = path.join("images", "server", req.file.originalname);
+        }
+        let pregunta = await Post.findById(_idPregunta);
+        const respuesta = await Respuesta.create({ 
+            contenido, 
+            fotografia,
+            usuario: {
+                nombres,
+                _id,
+                foto,
+            },
+        });
+        pregunta.respuestas.push(respuesta);
+        pregunta.save();
         return res.redirect("/");
     },
 };

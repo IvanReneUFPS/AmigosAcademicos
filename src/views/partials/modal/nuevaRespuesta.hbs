@@ -1,0 +1,28 @@
+<div class="modal fade" id="exampleModalrespuesta" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelrespuesta"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <form class="modal-content" action="/post/nuevaRespuesta" method="POST" enctype="multipart/form-data">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Respuesta</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <input id="idPregunta" name="_idPregunta" type="hidden">
+                    <textarea class="form-control" id="message-text" name="contenido"
+                     required></textarea>
+                </div>
+            </div>
+            <div class="form-group mt-1 border-top p-2">
+                    <label for="fotografia">Fotografia</label>
+                    <input type="file" name="fotografia">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </div>
+        </form>
+    </div>
+</div>
