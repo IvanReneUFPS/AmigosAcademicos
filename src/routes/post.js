@@ -28,4 +28,6 @@ router.get("/materia/:_id", async (req, res) => {
 
 router.post("/nuevaRespuesta", postController.responder);
 
+router.get("/respuestas/:_id", postController.getRespuestas);
+
 module.exports = router;

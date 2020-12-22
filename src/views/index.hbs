@@ -21,12 +21,12 @@
                     <p class="text-gray-400"> - {{timestamp this.fecha}}</p>
                 </label>
                 <div class="w-full">
-                    <p class="font-bold pb-0.5">{{this.titulo}}</p>
+                    <a href="/post/respuestas/{{_id}}" class="font-bold pb-0.5">{{this.titulo}}</a>
                     <p>{{this.contenido}}</p>
                 </div>
                 {{#if this.fotografia}}
                 <div class="mx-4 mt-1">
-                    <img src="{{this.fotografia}}" alt="Imagen post">
+                    <img src="/{{this.fotografia}}" alt="Imagen post">
                 </div>
                 {{/if}}
                 <div class="flex justify-between pt-2">
@@ -39,10 +39,10 @@
                             <i class="fas fa-arrow-circle-down"></i>
                             <p class="pl-2">{{this.votosNegativos}}</p>
                         </span>
-                        <span class="flex items-center">
+                        <a href="/post/respuestas/{{_id}}" class="flex items-center">
                             <i class="far fa-comment-dots"></i>
                             <p class="pl-2">{{this.respuestas.length}}</p>
-                        </span>
+                        </a>
                     </div>
                     <div class="flex items-center">
                         <a href="" onclick="getPregunta('{{this._id}}')" data-toggle="modal" data-target="#exampleModalrespuesta"
