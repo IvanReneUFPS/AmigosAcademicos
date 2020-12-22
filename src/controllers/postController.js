@@ -42,8 +42,8 @@ module.exports = {
             fotografia = path.join("images", "server", req.file.originalname);
         }
         let pregunta = await Post.findById(_idPregunta);
-        const respuesta = await Respuesta.create({ 
-            contenido, 
+        const respuesta = await Respuesta.create({
+            contenido,
             fotografia,
             usuario: {
                 nombres,
@@ -53,6 +53,18 @@ module.exports = {
         });
         pregunta.respuestas.push(respuesta);
         pregunta.save();
-        return res.redirect("/");
+        return res.redirect(`/post/respuestas/${_idPregunta}`);
+    },
+    getRespuestas: async (req, res) => {
+        const _id = req.params._id;
+        const post = await Post.findById(_id).lean();
+        const materias = await Materia.find().lean();
+        return res.render("respuestas",{
+            title: "Inicio",
+            user: req.user,
+            esAdmin: () => req.user.rol === "Administrador",
+            materias,
+            pregunta:post,
+        });
     },
 };
