@@ -7,13 +7,15 @@ const RespuestaSchema = new Schema({
         type: Date,
         dafault: Date.now,
     },
-    fotos: [
-        {
-            url: String,
-        },
-    ],
-    respuestas: [{ type: Schema.ObjectId, ref: "Respuesta" }],
-    usuario: { type: Schema.ObjectId, ref: "Usuario" },
+    fotografia: {
+        type: String,
+        required: false,
+    },
+    usuario: new Schema({
+        nombres: "string",
+        foto: "string",
+        _id: Schema.ObjectId,
+    }),
     votosPositivos: {
         type: Number,
         default: 0,

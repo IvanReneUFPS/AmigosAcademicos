@@ -41,11 +41,14 @@
                         </span>
                         <span class="flex items-center">
                             <i class="far fa-comment-dots"></i>
-                            <p class="pl-2">232</p>
+                            <p class="pl-2">{{this.respuestas.length}}</p>
                         </span>
                     </div>
                     <div class="flex items-center">
-                        <i class="fas fa-share pr-4"></i>
+                        <a href="" onclick="getPregunta('{{this._id}}')" data-toggle="modal" data-target="#exampleModalrespuesta"
+                            data-whatever="@mdo">
+                            <i class="fas fa-share pr-4"></i>
+                        </a>
                         <i class="fas fa-ellipsis-h"></i>
                     </div>
                 </div>
@@ -53,7 +56,9 @@
             {{/each}}
         </article>
     </section>
+    {{> modal/nuevaRespuesta}}
     {{> sidebar-right}}
     {{> footer}}
     <script src="/js/hacerPregunta.js"></script>
+    <script src="/js/hacerRespuesta.js"></script>
 </main>
