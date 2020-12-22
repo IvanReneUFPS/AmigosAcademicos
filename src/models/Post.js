@@ -15,7 +15,23 @@ const PostSchema = new Schema({
         nombre: "string",
         _id: Schema.ObjectId,
     }),
-    respuestas: [{ type: Schema.ObjectId, ref: "Respuesta" }],
+    respuestas: [
+        new Schema({
+            contenido: "string",
+            fecha: {
+                type: Date,
+                default: Date.now,
+            },
+            fotografia: "string",
+            usuario: new Schema({
+                nombres: "string",
+                foto: "string",
+                _id: Schema.ObjectId,
+            }),
+            votosPositivos: "number",
+            votosNegativos: "number"
+        })
+    ],
     titulo: { type: String, required: true },
     usuario: new Schema({
         nombres: "string",

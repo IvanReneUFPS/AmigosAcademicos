@@ -26,4 +26,6 @@ router.get("/materia/:_id", async (req, res) => {
     });
 });
 
+router.post("/nuevaRespuesta", postController.responder);
+
 module.exports = router;
