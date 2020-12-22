@@ -13,11 +13,12 @@
                     placeholder="¿Cuál es tu pregunta o enlace?" type="text">
             </div>
             {{#each preguntas}}
-                <div class="bg-white rounded-md border-1 border-black p-2 shadow-xl mt-4">
+            <div class="bg-white rounded-md border-1 border-black p-2 shadow-xl mt-4">
                 <label for="" class="flex items-center mb-4">
-                    <p class="bg-green-800 py-1 px-3 rounded-full mr-2 text-white">F</p>
-                    <p>{{this.usuario}}</p>
-                    <p class="text-gray-400">- {{this.fecha}}</p>
+                    <img class="rounded-full mr-2 text-white dropdown-toggle" src="{{this.usuario.foto}}" alt=""
+                        width="29px" height="29px">
+                    <p>{{this.usuario.nombres}} </p>
+                    <p class="text-gray-400"> - {{timestamp this.fecha}}</p>
                 </label>
                 <div class="w-full">
                     <p class="font-bold pb-0.5">{{this.titulo}}</p>

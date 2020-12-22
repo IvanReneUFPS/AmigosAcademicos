@@ -17,6 +17,8 @@ const router = require("./routes");
 const session = require("express-session");
 const morgan = require("morgan");
 const multer = require("multer");
+const { type } = require("os");
+const timestamp = require("./util/timeStamp");
 
 const storage = multer.diskStorage({
     destination: path.join(__dirname, "public/images/server"),
@@ -31,6 +33,16 @@ app.engine(
         extname: "hbs",
         defaultLayout: "layout",
         layoutsDir: path.join(__dirname, "/views", "/layouts"),
+        helpers: {
+            timestamp: (date) => {
+                const tmp = date.getTime();
+                const { value, unit } = timestamp(tmp);
+                const rtf = new Intl.RelativeTimeFormat("es", {
+                    style: "short",
+                });
+                return rtf.format(value, unit);
+            },
+        },
     })
 );
 
