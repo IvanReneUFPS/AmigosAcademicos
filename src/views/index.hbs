@@ -24,6 +24,11 @@
                     <p class="font-bold pb-0.5">{{this.titulo}}</p>
                     <p>{{this.contenido}}</p>
                 </div>
+                {{#if this.fotografia}}
+                <div class="mx-4 mt-1">
+                    <img src="{{this.fotografia}}" alt="Imagen post">
+                </div>
+                {{/if}}
                 <div class="flex justify-between pt-2">
                     <div class="flex">
                         <span class="flex items-center pr-2">

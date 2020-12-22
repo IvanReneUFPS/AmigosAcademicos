@@ -1,5 +1,6 @@
 const Materia = require("../models/Materia");
 const Post = require("../models/Post");
+const path = require("path");
 
 module.exports = {
     crear: async (req, res) => {
@@ -11,6 +12,7 @@ module.exports = {
         }
         const materiaDb = await Materia.findById(materia);
         if (materiaDb) {
+            console.log(fotografia);
             const post = await Post.create({
                 contenido,
                 fotografia,

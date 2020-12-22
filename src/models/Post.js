@@ -8,7 +8,8 @@ const PostSchema = new Schema({
         default: Date.now,
     },
     fotografia: {
-        url: String,
+        type: String,
+        required: false,
     },
     materia: new Schema({
         nombre: "string",
