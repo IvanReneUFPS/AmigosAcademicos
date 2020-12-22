@@ -27,19 +27,21 @@
                     <div class="flex">
                         <span class="flex items-center pr-2">
                             <i class="fas fa-arrow-circle-up"></i>
-                            <p class="pl-2">232</p>
+                            <p class="pl-2">{{this.votosPositivos}}</p>
                         </span>
                         <span class="flex items-center pr-2">
-                            <i class="fas fa-redo"></i>
-                            <p class="pl-2">232</p>
+                            <i class="fas fa-arrow-circle-down"></i>
+                            <p class="pl-2">{{this.votosNegativos}}</p>
                         </span>
                         <span class="flex items-center">
                             <i class="far fa-comment-dots"></i>
-                            <p class="pl-2">232</p>
+                            <p class="pl-2">{{this.votantes.length}}</p>
                         </span>
                     </div>
                     <div class="flex items-center">
-                        <i class="fas fa-share pr-4"></i>
+                        <a href="" onclick="">
+                            <i class="fas fa-share pr-4"></i>
+                        </a>
                         <i class="fas fa-ellipsis-h"></i>
                     </div>
                 </div>
