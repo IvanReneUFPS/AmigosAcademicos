@@ -10,7 +10,9 @@ router.get("/materia/:_id", async (req, res) => {
     if (req.user) {
         const _id = req.params._id;
         const materias = await Materia.find().lean();
-        const preguntas = await Post.find({ materia: _id }).lean();
+        const preguntas = await Post.find({
+            "materia._id": _id,
+        }).lean();
         return res.render("index", {
             title: "Inicio",
             user: req.user,
