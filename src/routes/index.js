@@ -3,10 +3,10 @@ const router = Router();
 const loginRouter = require("./login");
 const adminRouter = require("./admin");
 const postRouter = require("./post");
+const apiRouter = require("./api");
 const Materia = require("../models/Materia");
 const Post = require("../models/Post");
-
-router.get("/", async(req, res) => {
+router.get("/", async (req, res) => {
     if (req.user) {
         const materias = await Materia.find().lean();
         const preguntas = await Post.find().lean();
@@ -26,6 +26,7 @@ router.get("/", async(req, res) => {
 router.use("/auth", loginRouter);
 router.use("/admin", adminRouter);
 router.use("/post", postRouter);
+router.use("/api", apiRouter);
 
 router.get("/logout", function (req, res) {
     req.logout();

@@ -16,15 +16,13 @@
     {{/if}}
     <div class="flex justify-between pt-2">
         <div class="flex">
-            <span class="flex items-center pr-2">
-                <i class="fas fa-arrow-circle-up text-xl"></i>
-                <a href="#">
-                    <p class="pl-2">{{pregunta.votosPositivos}}</p>
-                </a>
+            <span class="flex items-center pr-2 cursor-pointer">
+                <i class="fas fa-arrow-circle-up text-xl" onclick="votarPositivo('{{pregunta._id}}')"></i>
+                <p class="pl-2" id="up{{pregunta._id}}">{{pregunta.votosPositivos}}</p>
             </span>
-            <span class="flex items-center pr-2">
-                <i class="fas fa-arrow-circle-down text-xl"></i>
-                <p class="pl-2">{{pregunta.votosNegativos}}</p>
+            <span class="flex items-center pr-2 cursor-pointer">
+                <i class="fas fa-arrow-circle-down text-xl" onclick="votarNegativo('{{pregunta._id}}')"></i>
+                <p class="pl-2" id="down{{pregunta._id}}">{{pregunta.votosNegativos}}</p>
             </span>
             <a href="/post/respuestas/{{_id}}" class="flex items-center">
                 <i class="far fa-comment-dots text-xl"></i>
@@ -36,7 +34,7 @@
                 data-target="#exampleModalrespuesta" data-whatever="@mdo">
                 <i class="fas fa-share pr-4 text-xl"></i>
             </a>
-            <i class="fas fa-comment-alt cursor-pointer text-xl" onclick="chat()"></i>
+            <i class="fas fa-comment-alt cursor-pointer text-xl pl-2 cursor-pointer" onclick="chat()"></i>
         </div>
     </div>
 </div>

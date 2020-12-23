@@ -29,8 +29,8 @@ const PostSchema = new Schema({
                 _id: Schema.ObjectId,
             }),
             votosPositivos: "number",
-            votosNegativos: "number"
-        })
+            votosNegativos: "number",
+        }),
     ],
     titulo: { type: String, required: true },
     usuario: new Schema({
@@ -38,7 +38,8 @@ const PostSchema = new Schema({
         foto: "string",
         _id: Schema.ObjectId,
     }),
-    votantes: [{ type: Schema.ObjectId, ref: "Usuario" }],
+    votantesPositivos: [],
+    votantesNegativos: [],
     votosNegativos: {
         type: Number,
         default: 0,
