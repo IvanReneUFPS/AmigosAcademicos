@@ -1,0 +1,42 @@
+<div class="bg-white rounded-md border-1 border-black p-4 shadow-xl mt-4">
+    <label for="" class="flex items-center mb-2">
+        <img class="rounded-full mr-2 text-white dropdown-toggle" src="{{pregunta.usuario.foto}}" alt="" width="29px"
+            height="29px">
+        <p>{{pregunta.usuario.nombres}} </p>
+        <p class="text-gray-400"> - {{timestamp pregunta.fecha}}</p>
+    </label>
+    <div class="w-full">
+        <a href="/post/respuestas/{{_id}}" class="font-bold pb-1">{{pregunta.titulo}}</a>
+        <p>{{pregunta.contenido}}</p>
+    </div>
+    {{#if pregunta.fotografia}}
+    <div class="mx-4 mt-1">
+        <img class="w-3/4 mx-auto" src="/{{pregunta.fotografia}}" alt="Imagen post">
+    </div>
+    {{/if}}
+    <div class="flex justify-between pt-2">
+        <div class="flex">
+            <span class="flex items-center pr-2">
+                <i class="fas fa-arrow-circle-up text-xl"></i>
+                <a href="#">
+                    <p class="pl-2">{{pregunta.votosPositivos}}</p>
+                </a>
+            </span>
+            <span class="flex items-center pr-2">
+                <i class="fas fa-arrow-circle-down text-xl"></i>
+                <p class="pl-2">{{pregunta.votosNegativos}}</p>
+            </span>
+            <a href="/post/respuestas/{{_id}}" class="flex items-center">
+                <i class="far fa-comment-dots text-xl"></i>
+                <p class="pl-2">{{pregunta.respuestas.length}}</p>
+            </a>
+        </div>
+        <div class="flex items-center">
+            <a href="" onclick="getPregunta('{{pregunta._id}}')" data-toggle="modal"
+                data-target="#exampleModalrespuesta" data-whatever="@mdo">
+                <i class="fas fa-share pr-4 text-xl"></i>
+            </a>
+            <i class="fas fa-comment-alt cursor-pointer text-xl" onclick="chat()"></i>
+        </div>
+    </div>
+</div>

@@ -1,7 +1,7 @@
 {{> header}}
 <link rel="stylesheet" href="/css/chat.css">
 <main class="w-9/12 mx-auto flex py-8">
-    <section class="flex w-4/5">
+    <section class="flex w-full">
         {{> modal/chat}}
         {{> sidebar-left}}
         <article class="w-4/5 pr-4">
@@ -15,51 +15,12 @@
                     placeholder="¿Cuál es tu pregunta o enlace?" type="text">
             </div>
             {{#each preguntas}}
-            <div class="bg-white rounded-md border-1 border-black p-2 shadow-xl mt-4">
-                <label for="" class="flex items-center mb-4">
-                    <img class="rounded-full mr-2 text-white dropdown-toggle" src="{{this.usuario.foto}}" alt=""
-                        width="29px" height="29px">
-                    <p>{{this.usuario.nombres}} </p>
-                    <p class="text-gray-400"> - {{timestamp this.fecha}}</p>
-                </label>
-                <div class="w-full">
-                    <a href="/post/respuestas/{{_id}}" class="font-bold pb-0.5">{{this.titulo}}</a>
-                    <p>{{this.contenido}}</p>
-                </div>
-                {{#if this.fotografia}}
-                <div class="mx-4 mt-1">
-                    <img src="/{{this.fotografia}}" alt="Imagen post">
-                </div>
-                {{/if}}
-                <div class="flex justify-between pt-2">
-                    <div class="flex">
-                        <span class="flex items-center pr-2">
-                            <i class="fas fa-arrow-circle-up"></i>
-                            <p class="pl-2">{{this.votosPositivos}}</p>
-                        </span>
-                        <span class="flex items-center pr-2">
-                            <i class="fas fa-arrow-circle-down"></i>
-                            <p class="pl-2">{{this.votosNegativos}}</p>
-                        </span>
-                        <a href="/post/respuestas/{{_id}}" class="flex items-center">
-                            <i class="far fa-comment-dots"></i>
-                            <p class="pl-2">{{this.respuestas.length}}</p>
-                        </a>
-                    </div>
-                    <div class="flex items-center">
-                        <a href="" onclick="getPregunta('{{this._id}}')" data-toggle="modal"
-                            data-target="#exampleModalrespuesta" data-whatever="@mdo">
-                            <i class="fas fa-share pr-4"></i>
-                        </a>
-                        <i class="fas fa-comment-alt cursor-pointer" onclick="chat()"></i>
-                    </div>
-                </div>
-            </div>
+            {{> pregunta pregunta=this}}
             {{/each}}
         </article>
     </section>
     {{> modal/nuevaRespuesta}}
-    {{> sidebar-right}}
+    {{!-- {{> sidebar-right}} --}}
     {{> footer}}
     <script src="/js/hacerPregunta.js"></script>
     <script src="/js/hacerRespuesta.js"></script>
