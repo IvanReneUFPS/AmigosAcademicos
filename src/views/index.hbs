@@ -1,6 +1,8 @@
 {{> header}}
+<link rel="stylesheet" href="/css/chat.css">
 <main class="w-9/12 mx-auto flex py-8">
     <section class="flex w-4/5">
+        {{> modal/chat}}
         {{> sidebar-left}}
         <article class="w-4/5 pr-4">
             <div class="bg-white rounded-md border-1 border-black p-3 shadow-xl cursor-pointer" data-toggle="modal"
@@ -45,11 +47,11 @@
                         </a>
                     </div>
                     <div class="flex items-center">
-                        <a href="" onclick="getPregunta('{{this._id}}')" data-toggle="modal" data-target="#exampleModalrespuesta"
-                            data-whatever="@mdo">
+                        <a href="" onclick="getPregunta('{{this._id}}')" data-toggle="modal"
+                            data-target="#exampleModalrespuesta" data-whatever="@mdo">
                             <i class="fas fa-share pr-4"></i>
                         </a>
-                        <i class="fas fa-comment-alt cursor-pointer" id="{{this._id}}"></i>
+                        <i class="fas fa-comment-alt cursor-pointer" onclick="chat()"></i>
                     </div>
                 </div>
             </div>
@@ -61,4 +63,5 @@
     {{> footer}}
     <script src="/js/hacerPregunta.js"></script>
     <script src="/js/hacerRespuesta.js"></script>
+    <script src="/js/modalChat.js"></script>
 </main>

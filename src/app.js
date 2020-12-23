@@ -2,13 +2,8 @@ require("dotenv").config();
 require("../config");
 require("./database");
 const path = require("path");
-const http = require("http");
 const express = require("express");
 const app = express();
-const server = http.createServer(app);
-const socketio = require("socket.io");
-const io = socketio.listen(server);
-require("./sockets")(io);
 const flash = require("connect-flash");
 const hbs = require("express-handlebars");
 const passport = require("passport");
@@ -17,7 +12,6 @@ const router = require("./routes");
 const session = require("express-session");
 const morgan = require("morgan");
 const multer = require("multer");
-const { type } = require("os");
 const timestamp = require("./util/timeStamp");
 
 const storage = multer.diskStorage({
@@ -57,6 +51,7 @@ app.use(
         extended: false,
     })
 );
+
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use(

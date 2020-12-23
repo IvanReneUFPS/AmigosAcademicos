@@ -1,0 +1,32 @@
+<div class="chat">
+    <div id="chat">
+        <div class="p-2 flex items-center justify-between border-b mb-4 border-gray-500">
+            <div class="flex items-center">
+                <img class="shadow rounded-full img-chat"
+                    src="https://images.unsplash.com/photo-1608585269273-5cacd36870f5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80">
+                <p class="pl-3">Frank Jean Pierre</p>
+            </div>
+            <i onclick="chat()" class="text-xl cursor-pointer fas fa-times-circle"></i>
+        </div>
+        <div class="bg-gray-200 rounded-md p-2">
+            <div class="flex rounded">
+                <img class="shadow rounded-full img-perfil"
+                    src="https://images.unsplash.com/photo-1608585269273-5cacd36870f5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80">
+                <div class="ml-2 py-1 px-2 bg-white rounded-sm">
+                    Hola, ¿Comó esta?
+                </div>
+            </div>
+        </div>
+        <div class="bg-gray-300 rounded-md p-2 mt-2">
+            <div class="flex justify-end rounded">
+                <div class="ml-2 py-1 px-2 bg-white rounded-sm">
+                    Bien gracias
+                </div>
+            </div>
+        </div>
+    </div>
+    <form class="flex items-center bg-blue-500 p-1 rounded-sm mt-2" id="formularioChat">
+        <input class="w-9/12 px-1" placeholder="Aa" type="text" id="mensaje" requerid>
+        <button class="w-3/12 ml-1 px-1 bg-black text-white" type="submit">Enviar</button>
+    </form>
+</div>
